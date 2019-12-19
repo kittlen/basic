@@ -12,12 +12,13 @@ public class Time比较 {
 		Date date1=df.parse("2050-12-31 23:59:59.0");
 		Date date2=new Date();
 		System.out.println(df.format(new Date()));
-		if(date1.after(date2)) {
+		if(date1.after(date2)) {//date1大于date2 after(大于)
 			System.out.println("yes");
 		}
-		if(date2.before(date1)) {
+		if(date2.before(date1)) {//before(小于)
 			System.out.println("no");
 		}
+		System.out.println(new Date(System.currentTimeMillis()));
 	}
 
 }
