@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+	"http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<!-- START SNIPPET: xworkSample -->
+<struts>
+	<package name="Notepad" extends="struts-default">
+		<action name="insert" class="action.NotepadAction"
+			method="insert">
+		</action>
+		<action name="update" class="action.NotepadAction"
+			method="update">
+		</action>
+		<action name="delete" class="action.NotepadAction"
+			method="delete">
+		</action>
+		<action name="select" class="action.NotepadAction"
+			method="select">
+		</action>
+		<action name="selectWhere" class="action.NotepadAction"
+			method="selectWhere">
+		</action>
+		
+	</package>
+</struts>
+
+<!-- END SNIPPET: xworkSample -->
+
