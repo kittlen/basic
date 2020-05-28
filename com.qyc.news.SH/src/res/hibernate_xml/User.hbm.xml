@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="model">
+	<class name="User" table="T_User">
+		<id name="userId" column="userId" type="string" length="50">
+			<generator class="assigned"></generator>
+		</id>
+		<property name="name" column="name" type="string" length="255"></property>
+		<property name="sex" column="sex" type="string" length="10"></property>
+		<property name="phono" column="phono" type="string" length="20"></property>
+	</class>
+</hibernate-mapping>

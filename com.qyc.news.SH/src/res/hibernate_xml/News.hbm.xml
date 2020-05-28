@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="model">
+	<class name="News" table="T_News">
+		<id name="newsId" column="newsId" type="integer">
+			<generator class="identity"></generator>
+		</id>
+		<property name="title" column="title" type="text"></property>
+		<property name="content" column="content" type="text"></property>
+		<property name="imageNameStr" column="imageName" type="text"></property>
+		<many-to-one name="user" class="User" lazy="false" >
+			<column name="userId"></column>
+		</many-to-one>
+		<property name="type" column="type" type="string" length="50"></property>
+		<property name="time" column="time" type="string" length="50"></property>
+		<property name="heat" column="heat" type="integer"></property>
+		<property name="comment" column="comment" type="integer"></property>
+	</class>
+</hibernate-mapping>

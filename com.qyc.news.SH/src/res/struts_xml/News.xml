@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+	"http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<!-- START SNIPPET: xworkSample -->
+<struts>
+	<package name="News" extends="struts-default">
+		<action name="insert" class="action.NewsAction"
+			method="insert">
+		</action>
+		<action name="update" class="action.NewsAction"
+			method="update">
+		</action>
+		<action name="delete" class="action.NewsAction"
+			method="delete">
+		</action>
+		<action name="select" class="action.NewsAction"
+			method="select">
+		</action>
+		<action name="selectById" class="action.NewsAction"
+			method="selectById">
+		</action>
+		<action name="upload" class="action.NewsAction" method="upload">
+		</action>
+		
+	</package>
+</struts>
+
+<!-- END SNIPPET: xworkSample -->
+
