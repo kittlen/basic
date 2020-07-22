@@ -23,8 +23,8 @@ import java.util.Map;
 */
 public final class JPushUtils {
    
-   private static String MASTER_SECRET = "4fad27b7d11e0f9df4d048e6";
-   private static String APP_KEY = "eb6e3947002f1c2f29a195e2";
+   private static String MASTER_SECRET = "3562131b65e7b0a725f0e0de";
+   private static String APP_KEY = "863a4f0d97b9d42204b9b145";
 
    /**
     * 不可实例化
@@ -104,8 +104,8 @@ public final class JPushUtils {
    
    
    
- //极光推送>>Android
- 	//Map<String, String> parm是我自己传过来的参数,同学们可以自定义参数
+   //极光推送>>Android
+ 	//Map<String, String> parm是我自己传过来的参数,可以自定义参数
  	public static void jpushAndroid(Map<String, String> parm) {
   
  		//创建JPushClient(极光推送的实例)
@@ -115,7 +115,7 @@ public final class JPushUtils {
  				.setPlatform(Platform.android())//指定android平台的用户
  				.setAudience(Audience.all())//你项目中的所有用户
  				//.setAudience(Audience.registrationId(parm.get("id")))//registrationId指定用户
- 				.setNotification(Notification.android(parm.get("msg"), "这是title", parm))
+ 				.setNotification(Notification.android(parm.get("msg"), parm.get("title"), parm))
  				//发送内容
  				.setOptions(Options.newBuilder().setApnsProduction(false).build())
  				//这里是指定开发环境,不用设置也没关系
@@ -196,4 +196,22 @@ public final class JPushUtils {
  			e.printStackTrace();
  		}    
  	}
+ 	
+ 	//测试用例
+ 	/*public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		//设置推送参数
+				//这里同学们就可以自定义推送参数了
+				Map<String, String> parm = new HashMap<String, String>();
+				parm.put("title", "这是标题");
+				//这里的id是,移动端集成极光并登陆后,极光用户的rid
+//				parm.put("id", "XXXXXXXXXXXXXXXX");
+				//设置提示信息,内容是文章标题
+				parm.put("msg","测试测试,收到请联系发送人");
+				JPushUtils.jpushAndroid(parm);
+		
+//		System.out.println(JPushUtils.sendBroadcast("这是一个标题","这是内容"));//此方法标题无法传递
+
+	}*/
 }
