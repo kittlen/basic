@@ -55,9 +55,11 @@ public class TimeUtil {
 				dataTime = format.format(y);
 				break;
 			case 3:
-				c.add(Calendar.DAY_OF_MONTH, -6);
+				c.setTime(new Date());
+				c.add(Calendar.DAY_OF_MONTH, -size);
 				Date month = c.getTime();
 				dataTime = format.format(month);
+				break;
 			default:
 				c.setTime(new Date());
 				dataTime = format.format(c.getTime());
