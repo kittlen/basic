@@ -26,46 +26,46 @@ public class TimeUtil {
 	}
 
 	/**
-	 * 获取当前时间前size dataType的日子
-	 * @param dataType 类型 0 日 ,1 月 2 年,3 星期
+	 * 获取当前时间前size dateType的日子
+	 * @param dateType 类型 0 日 ,1 月 2 年,3 星期
 	 * @param size 相差
 	 * @return
 	 */
-	public static String getNowDetailedTime(int dataType,int size){
+	public static String getNowDetailedTime(int dateType,int size){
 		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		Calendar c = Calendar.getInstance();
-		String dataTime="";
-		switch (dataType){
+		String dateTime="";
+		switch (dateType){
 			case 0:
 				c.setTime(new Date());
 				c.add(Calendar.DATE, - size);
 				Date d = c.getTime();
-				dataTime = format.format(d);
+				dateTime = format.format(d);
 				break;
 			case 1:
 				c.setTime(new Date());
 				c.add(Calendar.MONTH, -size);
 				Date m = c.getTime();
-				dataTime = format.format(m);
+				dateTime = format.format(m);
 				break;
 			case 2:
 				c.setTime(new Date());
 				c.add(Calendar.YEAR, -size);
 				Date y = c.getTime();
-				dataTime = format.format(y);
+				dateTime = format.format(y);
 				break;
 			case 3:
 				c.setTime(new Date());
 				c.add(Calendar.DAY_OF_MONTH, -size);
 				Date month = c.getTime();
-				dataTime = format.format(month);
+				dateTime = format.format(month);
 				break;
 			default:
 				c.setTime(new Date());
-				dataTime = format.format(c.getTime());
+				dateTime = format.format(c.getTime());
 				break;
 		}
-		return dataTime;
+		return dateTime;
 	}
 
 	/**
